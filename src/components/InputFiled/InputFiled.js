@@ -1,16 +1,36 @@
-import { React, useState } from "react";
+import { React, useContext, useState } from "react";
+import SideContext from "../SideContext/side-context";
+import "./InputFiled.css";
 
 export default function InputFiled(props) {
-  const [side1, setSide1] = useState("");
+  const [side, setSide] = useState("");
+  const sideCtx = useContext(SideContext);
+
+  function onChangeHandler(e) {
+    // console.log(`${props.id} on change :${e.currentTarget.value}`);
+    console.log(`set ${props.id} : ${sideCtx.side}`);
+    var tmpArr = sideCtx.side;
+    tmpArr[props.id] = e.currentTarget.value;
+    sideCtx.setSide(tmpArr);
+    setSide(e.currentTarget.value);
+  }
+
+  // function onInputHandler(e) {
+  //   console.log(`${props.name} on input :${e.currentTarget.value}`);
+  //   setSide(e.currentTarget.value);
+  // }
 
   return (
-    <div className="inputField">
-      {props.name}
+    <form  className="inputField">
+      <label>
+        Side {props.id+1}
         <input
-          type="double"
-          value={side1}
-          onChange={(e) => setSide1(e.target.value)}
+          type="number"
+          value={side}
+          onChange={onChangeHandler}
+          // onInput={onInputHandler}
         />
-    </div>
+      </label>
+    </form>
   );
 }
