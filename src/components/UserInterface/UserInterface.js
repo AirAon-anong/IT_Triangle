@@ -1,5 +1,4 @@
-import "./UserInterface.css";
-import InputForm from "./InputForm";
+import InputForm from "../InputForm/InputForm";
 
 function UserInterface() {
   return (

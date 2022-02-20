@@ -1,6 +1,5 @@
 import "./Triangle.css";
-import { useState } from "react";
-import UserInterface from "./UserInterface";
+import UserInterface from "../UserInterface/UserInterface";
 import React from "react";
 
 function Triangle() {
