@@ -1,13 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App'
-
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
+import { SideContextProvider } from "./components/SideContext/side-context";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App></App>
+    <SideContextProvider>
+      <App></App>
+    </SideContextProvider>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function

@@ -1,11 +1,13 @@
 import InputForm from "../InputForm/InputForm";
+import OutputForm from "../OutputForm/OutputForm";
 
 function UserInterface() {
   return (
     <div>
-      <div>Enter the length of sides</div>
+      <p>Enter the length of sides</p>
       <div>
-        <InputForm />
+        <InputForm></InputForm>
+        <OutputForm></OutputForm>
       </div>
     </div>
   );
