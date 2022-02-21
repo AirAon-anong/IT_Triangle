@@ -5,7 +5,7 @@ import "./UserInterface.css";
 function UserInterface() {
   return (
     <div className="Background">
-      <p>Enter the length of sides</p>
+      <p className="title">Enter the length of sides</p>
       <div>
         <InputForm></InputForm>
         <OutputForm></OutputForm>
