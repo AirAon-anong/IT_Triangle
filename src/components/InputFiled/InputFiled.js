@@ -8,7 +8,7 @@ export default function InputFiled(props) {
 
   function onChangeHandler(e) {
     // console.log(`${props.id} on change :${e.currentTarget.value}`);
-    console.log(`set ${props.id} : ${sideCtx.side}`);
+    // console.log(`set ${props.id} : ${sideCtx.side}`);
     var tmpArr = sideCtx.side;
     tmpArr[props.id] = e.currentTarget.value;
     sideCtx.setSide(tmpArr);
@@ -21,9 +21,9 @@ export default function InputFiled(props) {
   // }
 
   return (
-    <form  className="inputField">
+    <form className="inputField">
       <label>
-        Side {props.id+1}
+        Side {props.id + 1}
         <input
           type="number"
           value={side}
