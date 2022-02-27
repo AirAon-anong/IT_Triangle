@@ -5,6 +5,9 @@ import "./InputFiled.css";
 export default function InputFiled(props) {
   const [side, setSide] = useState("");
   const sideCtx = useContext(SideContext);
+  var tmpBadFields = sideCtx.badFields;
+
+  console.log(tmpBadFields);
 
   function onChangeHandler(e) {
     // console.log(`${props.id} on change :${e.currentTarget.value}`);
@@ -31,6 +34,7 @@ export default function InputFiled(props) {
           // onInput={onInputHandler}
         />
       </label>
+      
     </form>
   );
 }
