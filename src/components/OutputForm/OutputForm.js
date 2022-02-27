@@ -2,7 +2,7 @@ import { React, useContext, useState } from "react";
 import SideContext from "../SideContext/side-context";
 import "./OutputForm.css";
 
-export default function OutputForm() {
+export default function OutputForm(props) {
   const [Output, setOutput] = useState("");
   const sideCtx = useContext(SideContext);
 
@@ -37,6 +37,7 @@ export default function OutputForm() {
         output = "Scalene triangle";
       }
     } else {
+      props.setIsValid(false);
       local_area = -1;
       output = "ERROR";
     }
