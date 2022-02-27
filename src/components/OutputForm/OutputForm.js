@@ -24,10 +24,9 @@ export default function OutputForm(props) {
         tmpBadArr.push(i);
       }
     }
+    sideCtx.setBadFields(tmpBadArr);
     if (tmpBadArr.length > 0) {
-      // console.log(tmpBadArr);
-      sideCtx.setBadFields(tmpBadArr);
-      console.log(sideCtx.badFields);
+      // console.log(sideCtx.badFields);
       return false;
     }
     var a = parseInt(sideArr[0]);
