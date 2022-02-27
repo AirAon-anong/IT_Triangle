@@ -25,7 +25,7 @@ export default function InputFiled(props) {
       <label>
         Side {props.id + 1}
         <input
-          type="number"
+          type="text"
           value={side}
           onChange={onChangeHandler}
           // onInput={onInputHandler}
