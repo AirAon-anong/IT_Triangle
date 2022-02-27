@@ -9,6 +9,7 @@ export default function OutputForm(props) {
   function checkIfInvalid(str) {
     // console.log("CHECKING");
     for (let i = 0; i < str.length; i++) {
+      // console.log("CHECKING", str);
       if (str[i] == "-" || str[i] == "+") {
         return true;
       }
@@ -24,9 +25,11 @@ export default function OutputForm(props) {
         tmpBadArr.push(i);
       }
     }
+
     sideCtx.setBadFields(tmpBadArr);
+    // console.log("TMP", tmpBadArr);
+    // console.log("CTX", sideCtx.badFields);
     if (tmpBadArr.length > 0) {
-      // console.log(sideCtx.badFields);
       return false;
     }
     var a = parseInt(sideArr[0]);
@@ -60,6 +63,7 @@ export default function OutputForm(props) {
         output = "Scalene triangle";
       }
     } else {
+      // console.log(sideCtx.badFields);
       props.setIsValid(false);
       local_area = -1;
       output = "ERROR";
