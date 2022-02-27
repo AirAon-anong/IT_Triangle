@@ -9,7 +9,7 @@ export default function OutputForm(props) {
   function checkIfInvalid(str) {
     // console.log("CHECKING");
     for (let i = 0; i < str.length; i++) {
-      if (str[i] == "-") {
+      if (str[i] == "-" || str[i] == "+") {
         return true;
       }
     }
@@ -27,7 +27,7 @@ export default function OutputForm(props) {
     if (tmpBadArr.length > 0) {
       // console.log(tmpBadArr);
       sideCtx.setBadFields(tmpBadArr);
-      // console.log(sideCtx.setBadFields);
+      console.log(sideCtx.badFields);
       return false;
     }
     var a = parseInt(sideArr[0]);
