@@ -8,6 +8,9 @@ export default function OutputForm(props) {
 
   function checkIfInvalid(str) {
     // console.log("CHECKING");
+    if (str.length <= 0) {
+      return true;
+    }
     for (let i = 0; i < str.length; i++) {
       // console.log("CHECKING", str);
       if (str[i] < "0" || str[i] > "9") {
