@@ -1,0 +1,39 @@
+.output {
+  text-align: center;
+  font-size: x-large;
+  width: 340px;
+  height: 60px;
+  padding: 12px 20px;
+  margin: 8px 20px;
+  display: inline-block;
+  border: 1px solid #b8c505;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: #232528;
+  background-color: #e0ee18;
+}
+.button {
+  background-color: #e0ee18;
+  border: 1px solid #b8c505;
+  width: 55px;
+  height: 40px;
+  color: #232528;
+  padding: 12px 12px;
+  text-align: center;
+  font-size: x-large;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.button:hover {
+  border: 3px solid #232528;
+}
+.result {
+  font-size: x-large;
+  text-align: center;
+  margin: 10px 2px;
+  padding: 12px 80px;
+}
+.OutputBlock {
+  display: flex;
+  flex-wrap: nowrap;
+}

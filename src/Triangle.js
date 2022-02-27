@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import { React } from "react";
 import UserInterface from "./components/UserInterface/UserInterface";
 import "./Triangle.css";
 
