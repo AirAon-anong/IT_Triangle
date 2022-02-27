@@ -10,9 +10,11 @@ export default function OutputForm(props) {
     if (str.length <= 0) {
       return true;
     }
-
+    if (str == "0") {
+      return true;
+    }
     for (let i = 0; i < str.length; i++) {
-      if (str == "0" && str[i] != "." && (str[i] < "0" || str[i] > "9")) {
+      if (str[i] != "." && (str[i] < "0" || str[i] > "9")) {
         return true;
       }
     }
