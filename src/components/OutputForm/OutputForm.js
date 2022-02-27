@@ -7,13 +7,12 @@ export default function OutputForm(props) {
   const sideCtx = useContext(SideContext);
 
   function checkIfInvalid(str) {
-    // console.log("CHECKING");
     if (str.length <= 0) {
       return true;
     }
+
     for (let i = 0; i < str.length; i++) {
-      // console.log("CHECKING", str);
-      if (str[i] < "0" || str[i] > "9") {
+      if (str == "0" && str[i] != "." && (str[i] < "0" || str[i] > "9")) {
         return true;
       }
     }
@@ -35,9 +34,10 @@ export default function OutputForm(props) {
     if (tmpBadArr.length > 0) {
       return false;
     }
-    var a = parseInt(sideArr[0]);
-    var b = parseInt(sideArr[1]);
-    var c = parseInt(sideArr[2]);
+
+    var a = parseFloat(sideArr[0]);
+    var b = parseFloat(sideArr[1]);
+    var c = parseFloat(sideArr[2]);
     if (a + b > c && a + c > b && b + c > a) {
       return true;
     }
@@ -49,9 +49,9 @@ export default function OutputForm(props) {
     if (validate_input(a, b, c)) {
       var sideArr = sideCtx.side;
       // console.log(sideArr);
-      var a = parseInt(sideArr[0]);
-      var b = parseInt(sideArr[1]);
-      var c = parseInt(sideArr[2]);
+      var a = parseFloat(sideArr[0]);
+      var b = parseFloat(sideArr[1]);
+      var c = parseFloat(sideArr[2]);
       var s = (a + b + c) / 2;
       var local_area = Math.sqrt(s * (s - a) * (s - b) * (s - c));
       var arr = [a, b, c].sort();
