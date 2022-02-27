@@ -8,9 +8,12 @@ export default function OutputForm(props) {
 
   function checkIfInvalid(str) {
     // console.log("CHECKING");
+    if (str.length <= 0) {
+      return true;
+    }
     for (let i = 0; i < str.length; i++) {
       // console.log("CHECKING", str);
-      if (str[i] == "-" || str[i] == "+") {
+      if (str[i] < "0" || str[i] > "9") {
         return true;
       }
     }
@@ -27,7 +30,7 @@ export default function OutputForm(props) {
     }
 
     sideCtx.setBadFields(tmpBadArr);
-    // console.log("TMP", tmpBadArr);
+    console.log("TMP", tmpBadArr);
     // console.log("CTX", sideCtx.badFields);
     if (tmpBadArr.length > 0) {
       return false;
@@ -45,6 +48,7 @@ export default function OutputForm(props) {
     var output = "";
     if (validate_input(a, b, c)) {
       var sideArr = sideCtx.side;
+      // console.log(sideArr);
       var a = parseInt(sideArr[0]);
       var b = parseInt(sideArr[1]);
       var c = parseInt(sideArr[2]);
