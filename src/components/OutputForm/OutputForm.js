@@ -1,8 +1,7 @@
 import { React, useContext, useState } from "react";
-import OutputFiled from "../OutputFiled/OutputFiled";
 import SideContext from "../SideContext/side-context";
 
-export default function OutputForm() {
+export default function OutputForm(props) {
   const [Re, setRe] = useState("");
   const [area, setArea] = useState(0);
   const sideCtx = useContext(SideContext);
@@ -38,6 +37,7 @@ export default function OutputForm() {
         re = "Scalene triangle";
       }
     } else {
+      props.setIsValid(false);
       local_area = -1;
       re = "ERROR";
     }
@@ -50,7 +50,6 @@ export default function OutputForm() {
     <div>
       <p>area : {area}</p>
       <p>Re : {Re}</p>
-      {/* <OutputFiled>{Re}</OutputFiled> */}
       <button onClick={calculate_resault}>Enter</button>
     </div>
   );
