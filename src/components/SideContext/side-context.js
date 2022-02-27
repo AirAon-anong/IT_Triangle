@@ -2,28 +2,30 @@ import React, { createContext, useState } from "react";
 
 const SideContext = createContext({
   side: [],
-  badside: [],
+  badFields: [],
+  isValid: true,
+  output: "",
   setSide: () => {},
-  setBadeSide: () => {},
+  setBadFields: () => {},
 });
 
 export function SideContextProvider(props) {
   const [side, setSide] = useState([0, 0, 0]);
-  const [badSide, setBadSide] = useState([0, 0, 0]);
+  const [badFields, setBadFields] = useState([0, 0, 0]);
 
   function setSideHandler(sideArr) {
     setSide(sideArr);
   }
 
-  function setBadSideHandler(badSideArr) {
-    setBadSide(badSideArr);
+  function setBadFieldsHandler(badSideArr) {
+    setBadFields(badSideArr);
   }
 
   const context = {
     side: side,
-    badside: badSide,
+    badFields: badFields,
     setSide: setSideHandler,
-    setBadSide: setBadSideHandler,
+    setBadSide: setBadFieldsHandler,
   };
 
   return (
