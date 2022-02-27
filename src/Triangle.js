@@ -4,7 +4,7 @@ import "./Triangle.css";
 
 export default function Triangle() {
   return (
-    <div className="All">
+    <div>
       <UserInterface></UserInterface>
     </div>
   );
