@@ -11,7 +11,7 @@ const SideContext = createContext({
 
 export function SideContextProvider(props) {
   const [side, setSide] = useState([0, 0, 0]);
-  const [badFields, setBadFields] = useState([0, 0, 0]);
+  const [badFields, setBadFields] = useState([]);
 
   function setSideHandler(sideArr) {
     setSide(sideArr);
@@ -25,7 +25,7 @@ export function SideContextProvider(props) {
     side: side,
     badFields: badFields,
     setSide: setSideHandler,
-    setBadSide: setBadFieldsHandler,
+    setBadFields: setBadFieldsHandler,
   };
 
   return (
