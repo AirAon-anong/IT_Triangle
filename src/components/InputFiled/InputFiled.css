@@ -1,12 +1,24 @@
-input[type="text"],
-select {
+.valid {
   text-align: center;
   font-size: x-large;
   width: 350px;
   padding: 12px 20px;
   margin: 8px 30px;
   display: inline-block;
-  border: 1px solid #b8c505;
+  border: 1px solid #8e9526;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: #232528;
+  background-color: #e0ee18;
+}
+.invalid {
+  text-align: center;
+  font-size: x-large;
+  width: 350px;
+  padding: 12px 20px;
+  margin: 8px 30px;
+  display: inline-block;
+  border: 1px solid #f10c0c;
   border-radius: 4px;
   box-sizing: border-box;
   color: #232528;

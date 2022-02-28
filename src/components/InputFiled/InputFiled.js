@@ -6,8 +6,24 @@ export default function InputFiled(props) {
   const [side, setSide] = useState("");
   const sideCtx = useContext(SideContext);
   var tmpBadFields = sideCtx.badFields;
+  var tmpIsValid = sideCtx.isValid;
 
-  console.log(tmpBadFields);
+  tmpIsValid[props.id] = true;
+
+  // console.log(`side ${props.id + 1}`);
+  // console.log(tmpBadFields);
+  // console.log(tmpIsValid);
+
+  for (let i = 0; i < tmpBadFields.length; i++) {
+    // console.log(tmpBadFields[i]);
+    if (props.id === tmpBadFields[i]) {
+      tmpIsValid[tmpBadFields[i]] = false;
+      // console.log(tmpBadFields[i]);
+    }
+  }
+  sideCtx.setIsValid(tmpIsValid);
+  // console.log(tmpIsValid);
+  // console.log("----------------------");
 
   function onChangeHandler(e) {
     // console.log(`${props.id} on change :${e.currentTarget.value}`);
@@ -24,7 +40,7 @@ export default function InputFiled(props) {
   // }
 
   return (
-    <form className="inputField">
+    <form>
       <label>
         Side {props.id + 1}
         <input
@@ -32,9 +48,9 @@ export default function InputFiled(props) {
           value={side}
           onChange={onChangeHandler}
           // onInput={onInputHandler}
+          className={sideCtx.isValid[props.id] ? "valid" : "invalid"}
         />
       </label>
-      
     </form>
   );
 }

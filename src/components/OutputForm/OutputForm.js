@@ -31,7 +31,7 @@ export default function OutputForm(props) {
     }
 
     sideCtx.setBadFields(tmpBadArr);
-    console.log("TMP", tmpBadArr);
+    // console.log("TMP", tmpBadArr);
     // console.log("CTX", sideCtx.badFields);
     if (tmpBadArr.length > 0) {
       return false;
